@@ -1,1 +1,1 @@
-# tareekh
+# tareekh طَرِیخ
