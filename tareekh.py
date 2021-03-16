@@ -34,5 +34,17 @@ def main():
 
             json.dump(log, worklog)
 
+    if sys.argv[1] == "view":
+        project = sys.argv[2]
+
+        with open("projects/" + project + "/worklog", "r") as worklog:
+            log = json.load(worklog)["log"]
+
+            if sys.argv[3] == "total":
+                totaltime = 0
+                for l in log:
+                    totaltime += int(l["endtime"]) - int(l["starttime"])
+                print(f"Total Number of Hours Spent {totaltime / 100}")
+
 if __name__ == "__main__":
     main()
